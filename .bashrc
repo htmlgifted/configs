@@ -6,11 +6,10 @@
 [[ $- != *i* ]] && return
 
 # Export defaults
-export EDITOR=nano
-export TERMINAL=terminator
-export VISUAL=geany
-#export GDK_BACKEND=wayland
-export QT_QPA_PLATFORM=wayland-egl
+
+if [ -f ~/.exports ]; then
+	    . ~/.exports
+fi
 
 # Bash completion
 
@@ -36,11 +35,6 @@ export HISTCONTROL=ignoreboth
 # Import aliases
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
-fi
-
-# Set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
 fi
 
 [ ! "$UID" = "0" ] && mybey
