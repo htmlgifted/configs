@@ -15,7 +15,7 @@ function mkalias()
 }
 
 # extract - archive extractor
-# usage: ex <file>
+# usage: extract <file>
 extract ()
 {
   if [ -f $1 ] ; then
@@ -38,20 +38,77 @@ extract ()
   fi
 }
 
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias grep='grep --color=tty -d skip'
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+# Privileged access
+if [ $UID -ne 0 ]; then
+    alias sudo='sudo '
+    alias scat='sudo cat'
+    alias sedit='sudoedit'
+    alias root='sudo -s'
+    alias reboot='sudo systemctl reboot'
+    alias poweroff='sudo systemctl poweroff'
+    alias update='sudo pacman -Syyu'
+    alias netctl='sudo netctl'
+fi
 
-alias p='yaourt -Sy'
-alias pr='sudo pacman -Rs'
-alias pu='sudo pacman -Syyu'
-alias ps='yaourt -Ss'
-alias pg='pacman -Sg'
-alias pi='yaourt -Si'
+## ls ##
+alias ls='ls -hF --color=auto'
+alias lr='ls -R'                    # recursive ls
+alias ll='ls -l'
+alias la='ll -A'
+alias lx='ll -BX'                   # sort by extension
+alias lz='ll -rS'                   # sort by size
+alias lt='ll -rt'                   # sort by date
+alias lm='la | more'
+
+# cd and ls in one
+cl() {
+if [ -d "$1" ]; then
+	cd "$1"
+	ls
+	else
+	echo "bash: cl: '$1': Directory not found"
+fi
+}
+
+## Safety features ##
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'  # 'rm -i' prompts for every file
+# safer alternative w/ timeout, not stored in history
+alias rm=' timeout 3 rm -Iv --one-file-system'
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias cls=' echo -ne "\033c"'  # clear screen for real (it does not work in Terminology)
+
+## Make Bash error tollerant ##
+alias :q=' exit'
+alias :Q=' exit'
+alias :x=' exit'
+alias cd..='cd ..'
+
+
+## Package management ##
+
+alias p="sudo pacman -S"		# default action
+alias pu="pacman -Syu"		# '[u]pdate'
+alias pr="sudo pacman -Rs"		# '[r]emove'
+alias ps="pacman -Ss"		# '[s]earch'
+alias pi="pacman -Si"		# '[i]nfo
+alias plo="pacman -Qdt"		# '[l]ist [o]rphans'
+alias pc="sudo pacman -Scc"		# '[c]lean cache'
+alias plf="pacman -Ql"		# '[l]ist [f]iles'
+alias pex="pacman -D --asexp"	# 'mark as [ex]plicit'
+alias pim="pacman -D --asdep"	# 'mark as [im]plicit'
+alias y='yaourt -Sy'
+alias ys='yaourt -Ss'
+alias yi='yaourt -Si'
+
+# '[r]emove [o]rphans'
+alias pro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+
+## Git ##
 
 alias ga='git add'
 alias gp='git push'
@@ -68,4 +125,4 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 
-alias reload='clear && source ~/.bashrc'
+alias reload='clear && . ~/.bashrc'
