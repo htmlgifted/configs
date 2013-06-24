@@ -1,0 +1,48 @@
+[user]
+    email = 
+    name  = Gary DeLaney
+
+[alias]
+    go = checkout -B
+    s  = status -s
+    st = status
+    rb = rebase
+    cm = commit
+    co = checkout
+    br = branch
+    ls = ls-tree --full-tree -r HEAD
+
+    tags     = tag -l
+    branches = branch -a
+    remotes  = remote -v
+
+    lg = log --pretty=format:\"%Cred%h%Creset%C(bold)%x09%aN%Creset%x09%C(cyan)%ad (%cr)%Creset%x09%C(bold green)%s%Creset\" --date=iso
+    lt = log --graph --oneline --all
+
+[apply]
+    whitespace = fix
+
+[core]
+    whitespace = space-before-tab,indent-with-non-tab,trailing-space
+    pager = less -R
+    editor = vim
+
+[color]
+    ui = auto
+    branch = auto
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+# Use `origin` as the default remote on the `master` branch in all cases
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
