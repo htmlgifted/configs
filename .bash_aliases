@@ -125,5 +125,4 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 
-alias reconfig='cd && git clone https://github.com/gld1982ltd/configs.git && cd configs && chmod +x INSTALL && ./INSTALL'
 alias reload='clear && . ~/.bashrc'
