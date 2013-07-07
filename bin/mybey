@@ -3,7 +3,7 @@
 # v 0.06
 
 colour="\e[00;32m" # Green
-os_string="Arch"
+os_string=$(lsb_release -ds)
 host_name=$(hostname)
 kernel=$(uname -r)
 arch_bit=$(uname -m)
