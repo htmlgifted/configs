@@ -44,10 +44,8 @@ if [ $UID -ne 0 ]; then
     alias scat='sudo cat'
     alias sedit='sudoedit'
     alias root='sudo -s'
-    alias reboot='sudo systemctl reboot'
-    alias poweroff='sudo systemctl poweroff'
-    alias update='sudo pacman -Syyu'
-    alias netctl='sudo netctl'
+    alias reboot='sudo reboot'
+    alias update='sudo apt-get update && sudo apt-get upgrade'
 fi
 
 ## ls ##
@@ -87,26 +85,6 @@ alias :q=' exit'
 alias :Q=' exit'
 alias :x=' exit'
 alias cd..='cd ..'
-
-
-## Package management ##
-
-alias pac="sudo pacman -S"		# default action
-alias pacu="sudo pacman -Syyu"		# '[u]pdate'
-alias pacr="sudo pacman -Rs"		# '[r]emove'
-alias pacs="pacman -Ss"		        # '[s]earch'
-alias paci="pacman -Si"		        # '[i]nfo
-alias paclo="pacman -Qdt"		# '[l]ist [o]rphans'
-alias pacc="sudo pacman -Scc"		# '[c]lean cache'
-alias paclf="pacman -Ql"		# '[l]ist [f]iles'
-alias pacex="sudo pacman -D --asexp"	# 'mark as [ex]plicit'
-alias pacim="sudo pacman -D --asdep"	# 'mark as [im]plicit'
-alias y='yaourt -Syy'
-alias ys='yaourt -Ss'
-alias yi='yaourt -Si'
-
-# '[r]emove [o]rphans'
-alias pacro="pacman -Qtdq > /dev/null && sudo pacman -Rs \$(pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
 
 ## Git ##
 
