@@ -129,5 +129,5 @@ alias gcl='git clone'
 alias keygen='ssh-keygen -t rsa -C'
 
 alias getzen='wget -q https://api.github.com/zen -O zen && cat zen && rm zen'
-alias reconfig='cd && git clone https://github.com/gld1982ltd/configs.git && cd configs && ./INSTALL && cd && reload'
+alias reconfig='cd && git clone https://github.com/gld1982ltd/configs.git && cd configs && git checkout rpi && ./INSTALL && cd && reload'
 alias reload='clear && . ~/.bashrc'
