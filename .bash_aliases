@@ -103,4 +103,6 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 
+alias getzen='wget -q https://api.github.com/zen -O zen && cat zen && rm zen'
+alias reconfig='cd && git clone https://github.com/gld1982ltd/configs.git && cd configs && git checkout koding && ./INSTALL && cd && reload'
 alias reload='clear && . ~/.bashrc'
