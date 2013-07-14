@@ -51,7 +51,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 ## ls ##
-alias ls='ls -hF --color=auto'
+alias ls='ls -hF --group-directories-first --color=auto'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
 alias la='ll -A'
@@ -75,7 +75,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'  # 'rm -i' prompts for every file
 # safer alternative w/ timeout, not stored in history
-alias rm=' timeout 3 rm -Iv --one-file-system'
+#alias rm=' timeout 3 rm -Iv --one-file-system'
 alias ln='ln -i'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
@@ -128,4 +128,6 @@ alias gcl='git clone'
 ## SSH ##
 alias keygen='ssh-keygen -t rsa -C'
 
+alias getzen='wget -q https://api.github.com/zen -O zen && cat zen && rm zen'
+alias reconfig='cd && git clone https://github.com/gld1982ltd/configs.git && cd configs && ./INSTALL && cd && reload'
 alias reload='clear && . ~/.bashrc'
