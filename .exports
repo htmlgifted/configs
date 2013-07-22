@@ -3,6 +3,7 @@ export VISUAL=geany
 export BROWSER=exo-open
 export GDK_BACKEND=wayland
 export CLUTTER_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland-egl
 
 ## Virtualenvwrapper
 export PROJECT_HOME=$HOME/projects
