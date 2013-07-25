@@ -58,3 +58,6 @@ else # it is good evening till midnight
 fi
 # display greeting
 echo $greet
+# set the prompt
+export PS1='\n\w\n\[\e[32m\]$ \[\e[0m\]'
+
