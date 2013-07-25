@@ -6,6 +6,6 @@ export CLUTTER_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland-egl
 
 ## Virtualenvwrapper
-export PROJECT_HOME=$HOME/projects
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+#export PROJECT_HOME=$HOME/projects
+#export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/bin/virtualenvwrapper.sh
