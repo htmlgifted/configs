@@ -44,10 +44,10 @@ if [ $UID -ne 0 ]; then
     alias scat='sudo cat'
     alias sedit='sudoedit'
     alias root='sudo -s'
-    alias reboot='sudo systemctl reboot'
-    alias poweroff='sudo systemctl poweroff'
-    alias update='sudo pacman -Syyu'
-    alias netctl='sudo netctl'
+    alias reboot='sudo reboot'
+    alias poweroff='sudo shutdown -h now'
+    alias update='update = sudo apt-get update && sudo apt-get upgrade'
+
 fi
 
 ## ls ##
@@ -91,22 +91,9 @@ alias cd..='cd ..'
 
 ## Package management ##
 
-alias pac="sudo pacman -S"		# default action
-alias pacu="sudo pacman -Syyu"		# '[u]pdate'
-alias pacr="sudo pacman -Rs"		# '[r]emove'
-alias pacs="pacman -Ss"		        # '[s]earch'
-alias paci="pacman -Si"		        # '[i]nfo
-alias paclo="pacman -Qdt"		# '[l]ist [o]rphans'
-alias pacc="sudo pacman -Scc"		# '[c]lean cache'
-alias paclf="pacman -Ql"		# '[l]ist [f]iles'
-alias pacex="sudo pacman -D --asexp"	# 'mark as [ex]plicit'
-alias pacim="sudo pacman -D --asdep"	# 'mark as [im]plicit'
-alias y='yaourt -Syy'
-alias ys='yaourt -Ss'
-alias yi='yaourt -Si'
-
-# '[r]emove [o]rphans'
-alias pacro="pacman -Qtdq > /dev/null && sudo pacman -Rs \$(pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+alias install="sudo apt-get install"	
+alias update='sudo apt-get update'		
+alias upgrade='sudo apt-get upgrade'		
 
 ## Git ##
 
@@ -129,5 +116,4 @@ alias gcl='git clone'
 alias keygen='ssh-keygen -t rsa -C'
 
 alias getzen='wget -q https://api.github.com/zen -O zen && cat zen && rm zen'
-alias reconfig='cd && git clone https://github.com/gld1982ltd/configs.git && cd configs && ./INSTALL && cd && reload'
 alias reload='clear && . ~/.bashrc'

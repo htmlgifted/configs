@@ -9,14 +9,14 @@ ip=$(hostname -i)
 kernel=$(uname -r)
 arch_bit=$(uname -m)
 up_time=$(uptime | awk '{print $3}' | sed 's|,||g')
-num_packs=$(pacman -Qq | wc -l)
+num_packs=$(dpkg --get-selections | wc -l)
 cpu_name=$(grep 'model name' /proc/cpuinfo  | uniq | awk -F':' '{print $2}' | cut -f1 -d"@")
 ram_total=$(free -mto | grep Mem: | awk '{print $2}')
 ram_used=$(free -m | grep "buffers/cache" | awk '{print $3}')
 my_shell=$(echo $SHELL | sed 's|/bin/||g')
 #df -h --output=fstype,size,used /home | tail -n1 | awk '{ print $3" / "$2" ("$1")"}'
-root_space=$(df -h --output=fstype,size,used / | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
-#home_space=$(df -h --output=fstype,size,used $HOME | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
+root_space=$(df -h / | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
+#home_space=$(df -h $HOME | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
 
 echo
 echo -e "${colour} OS:\e[00m ${os_string} ${arch_bit}"
