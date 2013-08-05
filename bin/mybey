@@ -5,8 +5,8 @@
 colour="\e[00;32m" # Green
 os_string=$(lsb_release -ds)
 host_name=$(hostname)
-public_ip=$(wget -qO- ifconfig.me/ip)
-ip=$(hostname -i)
+pub_ip=$(wget -qO- ifconfig.me/ip)
+loc_ip=$(hostname -I)
 kernel=$(uname -r)
 arch_bit=$(uname -m)
 up_time=$(uptime | awk '{print $3}' | sed 's|,||g')
@@ -22,8 +22,8 @@ root_space=$(df -h / | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
 echo
 echo -e "${colour} OS:\e[00m ${os_string} ${arch_bit}"
 echo -e "${colour} Hostname:\e[00m ${host_name}"
-echo -e "${colour} Public IP:\e[00m ${public_ip}"
-echo -e "${colour} IP:\e[00m ${ip}"
+echo -e "${colour} Public IP:\e[00m ${pub_ip}"
+echo -e "${colour} Local IP:\e[00m ${loc_ip}"
 echo -e "${colour} Kernel:\e[00m ${kernel}"
 echo -e "${colour} Uptime:\e[00m ${up_time}"
 echo -e "${colour} Packages:\e[00m ${num_packs}"
