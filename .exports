@@ -1,5 +1,5 @@
 export EDITOR=nano
-export VISUAL=geany
+export VISUAL=mousepad
 export BROWSER=exo-open
 export GDK_BACKEND=wayland
 export CLUTTER_BACKEND=wayland
