@@ -12,8 +12,22 @@ This readme is to explain a few of the perks of this file combo.
 
 ###  Whats In these files ###
 In this set of config files you will find-
-1.bash alias  
+#Files
+1.bash_aliases  
 2.bashrc 
+3.bash_profile
+4.exports
+5.gitconfig
+6.install
+7 This readme.
+
+#Direcotories
+1.bin
+2.git
+
+#Directories made
+1. bin located at /home/user/bin
+
 ### How to use bash aliases ###
 Using bash aliases, witch make it a breaze to do long compicated commandsnow sudo 
 apt-get install can be done with an alias = install 'packagename' . if you want to see all aliases after installing the config files.... 
