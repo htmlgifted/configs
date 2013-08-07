@@ -46,8 +46,6 @@ if [ $UID -ne 0 ]; then
     alias root='sudo -s'
     alias reboot='sudo reboot'
     alias poweroff='sudo shutdown -h now'
-    alias update='update = sudo apt-get update && sudo apt-get upgrade'
-
 fi
 
 ## ls ##
@@ -75,7 +73,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'  # 'rm -i' prompts for every file
 # safer alternative w/ timeout, not stored in history
-#alias rm=' timeout 3 rm -Iv --one-file-system'
+# alias rm=' timeout 3 rm -Iv --one-file-system'
 alias ln='ln -i'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
@@ -98,6 +96,8 @@ alias install="sudo apt-get install'
 alias update='sudo apt-get update'		
 alias upgrade='sudo apt-get upgrade'		
 alias clean='sudo apt-get clean'
+alias purge='sudo apt-get remove --purge'
+alias autopurge='sudo apt-get autoremove --purge'
 
 ## Git ##
 
