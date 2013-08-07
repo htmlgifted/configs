@@ -113,6 +113,10 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 
+#script aliases 
+alias script1='/home/user/script/scriptname.sh'
+alias script2='/home/user/script/scriptname.sh'
+
 ## SSH ##
 alias keygen='ssh-keygen -t rsa -C'
 
