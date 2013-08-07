@@ -88,6 +88,10 @@ alias :Q=' exit'
 alias :x=' exit'
 alias cd..='cd ..'
 
+# these are short cmnds for History, aliases, and jobs.
+alias a='alias'
+alias h='history'
+alias j='jobs -l
 
 ## Package management ##
 
