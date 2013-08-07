@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd "$1"
+git add -A .
+git commit -q -m 'automated update'
+git push -q
+
+echo "Successful Push. Work on $USER"
