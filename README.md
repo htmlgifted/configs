@@ -15,18 +15,18 @@ In this set of config files you will find-
 #Files
 1.bash_aliases  
 2.bashrc 
-3.bash_profile
-4.exports
-5.gitconfig
-6.install
-7 This readme.
+3.bash_profile 
+4.exports 
+5.gitconfig 
+6.install 
+7 This readme. 
 
 #Direcotories
-1.bin
-2.git
+1..bin 
+2..git 
 
 #Directories made
-1. bin located at /home/user/bin
+1. bin located at /home/user/bin 
 
 ### How to use bash aliases ###
 Using bash aliases, witch make it a breaze to do long compicated commandsnow sudo 
