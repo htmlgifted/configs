@@ -4,6 +4,7 @@
 
 colour="\e[00;32m" # Green
 os_string=$(lsb_release -ds)
+date=$(date)
 host_name=$(hostname)
 pub_ip=$(wget -qO- ifconfig.me/ip)
 loc_ip=$(hostname -I)
@@ -21,6 +22,7 @@ root_space=$(df -h / | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
 
 echo
 echo -e "${colour} OS:\e[00m ${os_string} ${arch_bit}"
+echo -e "${colour} Date:\e[00m ${date}"
 echo -e "${colour} Hostname:\e[00m ${host_name}"
 echo -e "${colour} Public IP:\e[00m ${pub_ip}"
 echo -e "${colour} Local IP:\e[00m ${loc_ip}"
