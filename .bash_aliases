@@ -88,10 +88,9 @@ alias :Q=' exit'
 alias :x=' exit'
 alias cd..='cd ..'
 
-# these are short cmnds for History, aliases, and jobs.
+# these are short cmnds for History and aliases.
 alias a='alias'
 alias h='history'
-alias j='jobs -l
 
 ## Package management ##
 
@@ -116,12 +115,6 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
-
-#script aliases 
-## script's alias ##
-alias d='/home/$USER"/bin/get'
-alias script1='/home/$USER"/script/scriptname.sh'
-alias script2='/home/$USER"/script/scriptname.sh'
 
 ## SSH ##
 alias keygen='ssh-keygen -t rsa -C'
