@@ -8,7 +8,7 @@ INSTALLATION
 git clone https://github.com/gld1982ltd/configs.git && cd configs && git checkout ubuntu && ./INSTALL
 ```
 ### About This Read Me.###
-#This readme is to explain a few of the perks of this file combo. 
+This readme is to explain a few of the perks of this file combo. 
 
 ###  Whats In these files ###
 In this set of config files you will find-
