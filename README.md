@@ -29,7 +29,7 @@ In this set of config files you will find-
 1. bin located at /home/user/bin 
 
 ### How to use bash aliases ###
-Using bash aliases, witch make it a breaze to do long compicated commandsnow sudo 
+Using bash aliases, witch make it a breaze to do long compicated commands now sudo 
 apt-get install can be done with an alias = install 'packagename' . if you want to see all aliases after installing the config files.... 
 in terminal type  just a letter -   a    so it would look like=" $a "  . This alias is set to show you a full list of aliases that you can use for everyday usage... 
 
