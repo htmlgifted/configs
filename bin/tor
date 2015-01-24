@@ -1,0 +1,11 @@
+#!/bin/bash
+#######################################
+#this script cloaks your connections. #
+# with tor and Vidalia gui            #
+#######################################
+
+#This command starts tor gui
+/usr/bin/vidalia &
+
+#if works should see this
+echo "You have cloaked your connection"

@@ -1,0 +1,20 @@
+#!/bin/bash
+#############################
+# This script gives file    #
+# exicute permissions       #
+#############################
+
+#this
+if [[ $(echo $*) ]]; then
+
+    File_Name="$*"
+
+else
+
+    read -p "Enter your File Name: " File_Name
+
+fi
+
+#This command is the main cmd
+# to exicute a file to exicutable
+sudo chmod +x $File_Name
