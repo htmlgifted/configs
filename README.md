@@ -20,7 +20,7 @@ In this set of config files you will find-
 4. exports 
 5. gitconfig 
 6. install 
-7  This readme. 
+7.  This readme. 
 
 #Direcotories
 1. .bin 
