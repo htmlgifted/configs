@@ -9,7 +9,8 @@ git clone https://github.com/htmlgifted/configs.git && cd configs && git checkou
 ```
 <<<<<<< HEAD
 ### About This Read Me.###
-This readme is to explain a few of the perks of this file combo. 
+Welcome to HtmlGifted's Bash ubuntu custom setup. This readme is to explain a few of the perks of this file combo. 
+The origanal master branch is a buddy of mine and I have been contributing to the improvement of this branch of the configs for some time and have found it fun and enjoyable experience my hope is to help users find the command line interface more apealing and user freindly so user feeel right at home at cli (Command Line Interface). This combo takes advantage of many great little features of your system and allows you to be able to access info with entering a command. or the ability to shorten commands to a easy to understand lanague for every day user .... example.. 'sudo -s' would be 'root'. this way the commands fit a better range of device capabilities with can hopefuly advance into helping users with vioce technology to be able to speack there commands like normal human lanague and the terminal understands what the user means. With this hope I have been doing my best to advance all areas of this combo to help make it the best it can be i have yet to make more adjustments and plan on doing more in the very near future....
 
 ###  Whats In these files ###
 In this set of config files you will find-
