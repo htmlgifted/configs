@@ -20,7 +20,8 @@ In this set of config files you will find-
 4. exports 
 5. gitconfig 
 6. install 
-7.  This readme. 
+7. This readme 
+8. Dependancies
 
 #Direcotories
 1. .bin 
@@ -84,3 +85,18 @@ WARNING: This file WILL OVERWRITE any of these files in your home directory when
 # README.md
 This file is the file you are reading!
 >>>>>>> upstream/ubuntu
+
+
+Dependancies needed to run some commannds in this setup.
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+
+Thanks for checking it out and don't forget to let us know what you think...
