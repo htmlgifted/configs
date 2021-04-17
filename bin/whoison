@@ -1,0 +1,46 @@
+#!/bin/bash
+
+#This script runs and checks for all
+#all active ips on a network then adds
+#the list to a file called ips.txt in 
+#the user dir. Enjoy
+
+#sets router ip address
+RTR=$(ip route show | grep -i 'default via'| awk '{print $3 }')
+
+#changes dir
+cd /home/$USER/
+
+#gets this machines ip address
+MYIP=$(ifconfig | sed -n 's/^\s*inet \(addr:\)\?\([^\s]*\) .*/\2/;T;/^127\./d;p')
+
+#finds the active connected network interface
+INTERFACE=$(ip addr | awk '/state UP/ {print $2}')
+
+#get connected network subnetmask
+CIDR=$(ip addr show |grep -w inet | grep -v 127.0.0.1 | awk '{ print $2}'| cut -d "/" -f 2)
+
+#sets the base of the ip range
+IPBASE=$(ifconfig $INTERFACE | sed -n 's/^\s*inet \(addr:\)\?\([^\s]*\) .*/\2/;T;/^127\./d;p' |cut -d ":" -f 2 | cut -d "." -f 1-3)
+
+#Finds all active ip adresses on network
+
+sudo nmap -sFV -O -F --exclude $MYIP,$RTR $IPBASE.1/$CIDR |awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3;}' | sort > /home/$USER/ips.txt
+
+
+#this counts the lines used in the ips.txt file
+#then this command echo's the count
+COUNT=$(wc ips.txt -l)
+echo $COUNT 
+
+#This echo's the # of ip addresses 
+#found in ips.txt file
+echo
+#This line shows u ips.txt contents
+cat ips.txt
+
+#changes the dir back to the orignal
+cd "$OLDPWD"
+
+#this line echo's finished running
+echo "$USER U can find these ips in ips.txt in $HOME"
