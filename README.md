@@ -5,7 +5,7 @@ My config files
 
 INSTALLATION
 ```bash
-git clone https://github.com/gld1982ltd/configs.git && cd configs && ./INSTALL
+git clone https://github.com/htmlgifted/configs.git && cd configs && ./INSTALL
 ```
 #01/25/2015 Added two files
 
