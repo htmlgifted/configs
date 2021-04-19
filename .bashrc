@@ -39,7 +39,7 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
-[ ! "$UID" = "0" ] && mybey
+[ ! "$UID" = "0" ] && ~/bin/mybey
 
 ## Greeting
 # from Jonathan's .bashrc file (by ~71KR117)
