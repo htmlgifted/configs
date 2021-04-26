@@ -11,14 +11,18 @@ CIDR=$(ip addr show |grep -w inet | grep -v 127.0.0.1 | awk '{ print $2}'| cut -
 
 #Finds a random ip address in a file.
 RIP1=$(shuf -n 1 ~/ips.txt | cut -d"." -f4 && echo $RIP1)
+RIP2=$(cat ~/pubip.txt | awk -F'[: ]' '{ print $1}')
 
 #gets the local ip address range example = 10.0.0.1
+#and places it in localip.txt
+IPRANGE=$(ifconfig wlxc43a3516a628 | sed -ne 's/^.*inet \(addr:\)*\([^ ]*\).*/\2/;te' -e 'd;:e' -e '/^127\./d;p' > ~/localip.txt)
+
 #with out the forth number.
-IPBASE=$(ifconfig wlx00198681e0d8 | sed -nr '/inet addr:/{s/ *inet addr:([^ ]*)\..*/\1/;p}')
+IPBASE=$(cat ~/pubip.txt | awk -F'[: ]' '{ print $1}')
 
 #Use a decoy while scanning ports 
 #to avoid getting caught by the sys admin.
-sudo nmap -sS $IPBASE.$RIP1/$CIDR -D $IPBASE.$RIP1 --open -oN  /home/$USER/openports.txt
+sudo nmap -sS $IPRANGE -D $RIP2
 
 #this line echo's script done.
 echo "$USER U can find these ips in openoprts.txt in $HOME"
