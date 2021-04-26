@@ -117,22 +117,22 @@ example - Example: mkalias rm "rm -i"
 
 # Alias commands added
 
-Update
-Upgrade
-autoclean
-close
-open
-install
-bios
+1.Update
+2.Upgrade
+3.autoclean
+4.close
+5.open
+6.install
+7.bios
 
 #Other alias commands
 
-Git Commands
-ssh commands
+1.Git Commands
+2.ssh commands
 ls commands
-package management commands
-safety commands - basic commands shortened
-Privileged access commands
+3.package management commands
+4.safety commands - basic commands shortened
+5.Privileged access commands
 
 #Message from Me.
 
