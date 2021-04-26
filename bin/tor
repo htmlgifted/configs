@@ -4,8 +4,21 @@
 # with tor and Vidalia gui            #
 #######################################
 
-#This command starts tor gui
-/usr/bin/vidalia &
+#This command starts tor sockets
+source torsocks on
+
+
+#this command gets tor public ip
+#and set's a variable Runtest
+RUNTST=$(wget -qO - https://api.ipify.org; echo)
+
+#this command sets the public ip
+#
+GETTORPUBIP=$(wget -qO - https://api.ipify.org;)
+
+#This tests the connection and places
+#it in the file torpubip.txt
+wget -qO- icanhazip.com > ~/torpubip.txt
 
 #if works should see this
-echo "You have cloaked your connection"
+echo "You have cloaked your connection - $RUNTST"n"
