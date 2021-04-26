@@ -1,0 +1,6 @@
+#!/bin/bash
+# This script is to run a
+#connection check to your network
+
+#gets the network route table
+netstat -r

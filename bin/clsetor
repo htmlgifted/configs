@@ -1,0 +1,12 @@
+#!/bin/bash
+#this script closes an active connection
+
+#this command stops tor
+source torsocks off
+
+#this command gets none tor pub ip address
+RUNTST=$(wget -qO - https://api.ipify.org;)
+
+#this confirms to the user conenction closed 
+#and displays a none tor public ip address
+echo "You have closed your your tor connection - $RUNTST"

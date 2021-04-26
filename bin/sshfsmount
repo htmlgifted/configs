@@ -1,0 +1,9 @@
+#!/bin/bash
+#This script line connects you to a successful
+#set up of a ssh server. Use this code for all 
+#machines you want to connect to the ssh share 
+#with sshfs. make sure to pay attention to where 
+#your share is and where you want it..  
+#It will create dir if it does not find it.
+
+sshfs -o idmap=user botman@142.93.108.48:/home/botman/ $HOME/development/botserver
