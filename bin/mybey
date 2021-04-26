@@ -2,41 +2,46 @@
 # Archbey2 by Mr Green
 # v 0.06
 
-colour="\e[00;32m" # Green
+colour="\e[00;32m" # Green"
 os_string=$(lsb_release -ds)
 date=$(date)
 host_name=$(hostname)
-pub_ip=$(cat $HOMEhackstack/.pub_ip)
-loc_ip=$(cat $HOME/hackstack/.localip)
-server_ip=$(cat $HOME/hackstack/.server_ip)
-vps_ip=$(cat $HOME/hackstack/.vps_ip)
+pub_ip=$(wget -qO - https://api.ipify.org; > ~/pubip.txt)
+tor_pub_ip=$(cat ~/torpubip.txt)
+loc_ip=$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}')
+#server_ip=$(cat $HOME/hackstack/.server_ip)
+#vps_ip=$(cat $HOME/hackstack/.vps_ip)
 kernel=$(uname -r)
 arch_bit=$(uname -m)
 up_time=$(uptime | awk '{print $3}' | sed 's|,||g')
 num_packs=$(dpkg --get-selections | wc -l)
 cpu_name=$(grep 'model name' /proc/cpuinfo  | uniq | awk -F':' '{print $2}' | cut -f1 -d"@")
-ram_total=$(free -mto | grep Mem: | awk '{print $2}')
+#ram_total=$(free -o | grep Mem: | awk '{print $2}')
 ram_used=$(free -m | grep "buffers/cache" | awk '{print $3}')
 my_shell=$(echo $SHELL | sed 's|/bin/||g')
 #df -h --output=fstype,size,used /home | tail -n1 | awk '{ print $3" / "$2" ("$1")"}'
-root_space=$(df -h / | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
-#home_space=$(df -h $HOME | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
+#root_space=$(df -h / | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
+home_space=$(df -h $HOME | tail -n1 | awk '{ print $3" / "$2" ("$1")"}')
+tools=$(ls -C ~/bin/)
+#results_files=$(cd ~/ && ls -C | grep -v ~/$)
 
 echo
 echo -e "${colour} OS:\e[00m ${os_string} ${arch_bit}"
 echo -e "${colour} Date:\e[00m ${date}"
 echo -e "${colour} Hostname:\e[00m ${host_name}"
 echo -e "${colour} Public IP:\e[00m ${pub_ip}"
+echo -e "${colour} TorPub Ip:\e[00m ${tor_pub_ip}"
 echo -e "${colour} Local IP:\e[00m ${loc_ip}"
-echo -e "${colour} server IP:\e[00m ${server_ip}"
-echo -e "${colour} vps IP:\e[00m ${vps_ip}"
+#echo -e "${colour} server IP:\e[00m ${server_ip}"
+#echo -e "${colour} vps IP:\e[00m ${vps_ip}"
 echo -e "${colour} Kernel:\e[00m ${kernel}"
 echo -e "${colour} Uptime:\e[00m ${up_time}"
 echo -e "${colour} Packages:\e[00m ${num_packs}"
 echo -e "${colour} RAM:\e[00m ${ram_used} / ${ram_total} MB"
 echo -e "${colour} CPU:\e[00m${cpu_name}"
 echo -e "${colour} Shell:\e[00m ${my_shell}"
-echo -e "${colour} Root:\e[00m ${root_space}"
-#echo -e "${colour} Home:\e[00m ${home_space}"
-echo -e "${colour} \e[00m"
+#echo -e "${colour} Root:\e[00m ${root_space}"
+echo -e "${colour} Home:\e[00m ${home_space}"
+echo -e "${colour} Tools:\e[00m ${tools}"
+#echo -e "${colour} Result Files:\e[00m ${results_files}"
 echo
