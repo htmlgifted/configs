@@ -134,6 +134,24 @@ ls commands
 4.safety commands - basic commands shortened
 5.Privileged access commands
 
+
+Example of how to use bin scripts.
+
+senerio - A unknown ip address is access your device.
+
+we will use google dns ip for this example ( 8.8.8.8)
+
+usage - $ ipscan
+Output -  Please enter ip address to look up (enter 8.8.8.8 & hit enter)
+The command will then output the hopes it takes to the desitnation ip entered.
+
+Geoip script usage.
+Taking the second to last address on the results from the ip scan.
+
+usage - $ geoip
+output - please enter ip to scan (enter ip address from ipscan results & hit enter)
+The command will then output all information pertaining to the ip's geo location data
+
 #Message from Me.
 
 If you are having issues with commands not functioning on your system please feel to let me know.
