@@ -10,7 +10,7 @@
 #Sets the entered ip as a variable
 
 #Asks for host info
-echo please enter host to scan.
+echo please enter ip to scan.
 
 #sets the entered host as variable
 read varhost
