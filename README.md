@@ -94,7 +94,7 @@ How to run this script-
 1. put in bin dir.
 2. enter line "iptrace (ipaddress to track)"
 
-##ipscan
+##scan
 This script is meant to report pingable ip address that are not supposed to be active. 
 If active then will display outcome
 
@@ -124,6 +124,7 @@ example - Example: mkalias rm "rm -i"
 5.open
 6.install
 7.bios
+8.fix
 
 #Other alias commands
 
@@ -137,16 +138,21 @@ ls commands
 
 Example of how to use bin scripts.
 
-senerio - A unknown ip address is access your device.
+senerio - A unknown ip address is accessing your device.
 
 we will use google dns ip for this example ( 8.8.8.8)
 
-usage - $ ipscan
+usage - $ scan
 Output -  Please enter ip address to look up (enter 8.8.8.8 & hit enter)
 The command will then output the hopes it takes to the desitnation ip entered.
 
+usage - $ iptrace
+Output -  Please enter the ip address to trace.
+The command will the output the hops back to the enter ip address 
+
 Geoip script usage.
-Taking the second to last address on the results from the ip scan.
+Taking the second to last address on the results from the ip trace. last
+Or using thelast ip in the list. Can be done for comairing results of output. 
 
 usage - $ geoip
 output - please enter ip to scan (enter ip address from ipscan results & hit enter)
