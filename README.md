@@ -22,9 +22,18 @@ git clone https://github.com/htmlgifted/configs.git && cd configs && ./INSTALL
 This project was created by me and a really good pal online (name here).
 The project was offered to me and I used it to create a fun and easy to use cli interface for ubuntu. I have been working and using these scripts since *ubuntu 14.04*
 I have updated the script for usage with the bash shell as the commands and options change from time to time. as of today's updates and changes in commands and adding more scripts.
-As of these updates and changes I am using these scripts and commands on my xubuntu 18.04 system.
+
+#2021 - As of these updates and changes I am using these scripts and commands on my xubuntu 18.04 system.
 
 If you like this set of config files please feel free to star the respitorie.
+
+Added Items you may want to install for use with the scripts.
+1. nmap
+2. whois
+3. traceroute
+4. curl
+5. tor
+6. 
 
 # Files
 1. .bash_profile
@@ -140,7 +149,7 @@ Example of how to use bin scripts.
 
 senerio - A unknown ip address is accessing your device.
 
-we will use google dns ip for this example ( 8.8.8.8)
+we will use google dns ip for this example ( 8.8.8.8 )
 
 usage - $ scan
 Output -  Please enter ip address to look up (enter 8.8.8.8 & hit enter)
